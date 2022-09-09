@@ -144,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishCollider: {fileID: 9081350460622346509}
   touchCollider: {fileID: 5277874689956994277}
-  speed: 20
+  speed: 12.5
   destroyCooldown: 3
   fishHookWaitTime: 1
   fishOffset: {x: 0.7, y: 0.3, z: 0.7}

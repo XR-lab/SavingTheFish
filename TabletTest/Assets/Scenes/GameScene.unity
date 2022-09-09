@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf38fcfb354a864ba063e1575d56d58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flockUnitPrefab: {fileID: 2234433226198159177, guid: 3da22e20afdbcef40bf00213ff2f99a6, type: 3}
+  flockUnitPrefab: {fileID: 3224259826475622317, guid: e19eead56d245be40991f875287bde84, type: 3}
   flockSize: 15
   spawnBounds: {x: 5, y: 5, z: 5}
   _minSpeed: 3.5
@@ -353,6 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -2786,19 +2787,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf38fcfb354a864ba063e1575d56d58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flockUnitPrefab: {fileID: 4565200548340061923, guid: befaccdac4602a342af96aee4e093130, type: 3}
+  flockUnitPrefab: {fileID: 3911114529306004788, guid: 3227f26e60ab50e4c97ab23e1dcd0ab4, type: 3}
   flockSize: 15
   spawnBounds: {x: 5, y: 5, z: 5}
-  _minSpeed: 3.5
-  _maxSpeed: 6.5
+  _minSpeed: 2.24
+  _maxSpeed: 5.39
   _cohesionDistance: 5
   _avoidanceDistance: 10
-  _aligementDistance: 2.6
-  _obstacleDistance: 4.36
+  _aligementDistance: 4.01
+  _obstacleDistance: 2.4
   _boundsDistance: 2.5
-  _cohesionWeight: 2.15
-  _avoidanceWeight: 5.77
-  _aligementWeight: 8.04
+  _cohesionWeight: 2.16
+  _avoidanceWeight: 4.04
+  _aligementWeight: 6.54
   _boundsWeight: 10
   _obstacleWeight: 100
 --- !u!4 &1787482899
