@@ -12,38 +12,36 @@ public class Timer : MonoBehaviour
     [SerializeField] Text fishLeftText;
     [SerializeField] Text fishHooksStoppedText;
 
-    [Space, SerializeField] Text timerText;
-    [SerializeField] float timeInMinutes;
+    //[Space, SerializeField] Text timerText;
+    [Space, SerializeField] Slider m_TimerSlider;
+    [SerializeField] float m_TimeInMinutes;
 
-    float currentTime;
-    bool gameHasEnded;
+    bool m_GameHasEnded;
 
     private void Awake()
     {
-        currentTime = timeInMinutes * 60;
+        m_TimerSlider.maxValue = m_TimeInMinutes * 60;
+        m_TimerSlider.value = m_TimeInMinutes * 60;
+        m_GameHasEnded = false;
     }
 
     void Update()
     {
-        if (gameHasEnded)
-            return;
+        float time = m_TimeInMinutes * 60 - Time.time;
 
-        UpdateTime();
-    }
-    void UpdateTime()
-    {
-        currentTime -= Time.deltaTime;
-
-        TimeSpan time = TimeSpan.FromSeconds(currentTime);
-        timerText.text = time.ToString(@"mm\:ss");
-        if (currentTime <= 0)
+        if (time <= 0)
         {
             DisplayEndScreen();
         }
+        else if (m_GameHasEnded == false)
+        {
+            m_TimerSlider.value = time;
+        }
+
     }
     void DisplayEndScreen()
     {
-        gameHasEnded = true;
+        m_GameHasEnded = true;
         FindObjectOfType<FishnetIndicator>().GameEnded();
 
         infoPanel.SetActive(false);
