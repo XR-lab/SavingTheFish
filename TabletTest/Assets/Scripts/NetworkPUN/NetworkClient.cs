@@ -2,12 +2,15 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 
-public class NetworkClient : MonoBehaviourPunCallbacks
+public class NetworkClient : MonoBehaviourPunCallbacks, IPunObservable
 {
-
+    [SerializeField] private NetworkClientBaseData dataPrefab;
+    
     private float timer = 0;
     private float timerThreshold = 30;
     private readonly int tryConnectEvery = 30;
+
+    private PhotonTransformView transformView;
 	
 	void Awake()
     {
@@ -51,6 +54,8 @@ public class NetworkClient : MonoBehaviourPunCallbacks
     {
         Debug.Log("Joined a Room");
         base.OnJoinedRoom();
+
+        PhotonNetwork.Instantiate(dataPrefab.name, Vector3.zero, Quaternion.identity);
     }
 
     public override void OnJoinRoomFailed(short returnCode, string message)
@@ -84,5 +89,10 @@ public class NetworkClient : MonoBehaviourPunCallbacks
     public override void OnLeftLobby()
     {
         TryConnectToRoom();
+    }
+
+    public virtual void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+
     }
 }

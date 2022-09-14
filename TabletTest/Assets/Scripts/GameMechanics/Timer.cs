@@ -27,18 +27,22 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        float time = m_TimeInMinutes * 60 - Time.time;
+        float time = m_TimeInMinutes * 60 - Time.timeSinceLevelLoad;
 
         if (time <= 0)
         {
             DisplayEndScreen();
+            SaveTheFishData data = FindObjectOfType<SaveTheFishData>();
+            if (data != null) { data.IsPlaying = false; }
         }
         else if (m_GameHasEnded == false)
         {
             m_TimerSlider.value = time;
+            SaveTheFishData data = FindObjectOfType<SaveTheFishData>();
+            if (data != null) { data.IsPlaying = true; }
         }
-
     }
+
     void DisplayEndScreen()
     {
         m_GameHasEnded = true;
