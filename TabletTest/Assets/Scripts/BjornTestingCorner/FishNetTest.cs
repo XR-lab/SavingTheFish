@@ -6,22 +6,35 @@ public class FishNetTest : MonoBehaviour
 {
     [SerializeField] Collider fishCollider;
     [SerializeField] Collider touchCollider;
+    [SerializeField] GameObject FlockPosition;
 
     [Space, SerializeField] float speed = 3f;
     [SerializeField] float destroyCooldown = 3f;
     [SerializeField] float fishHookWaitTime = 1f;
     [SerializeField] Vector3 fishOffset;
     bool inCooldown;
+    bool goUp;
 
     private void Start()
     {
         HookTriggered(true);
+        FlockPosition = GameObject.FindGameObjectWithTag("Flock");
+        
     }
 
     void Update()
     {
-        transform.position += transform.forward * Time.deltaTime * speed;
-        
+        if (transform.position != FlockPosition.transform.position && goUp == false)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, FlockPosition.transform.position, Time.deltaTime * speed);
+        }
+        else //(transform.position == FlockPosition.transform.position)
+        {
+            goUp = true;
+            Debug.Log(goUp);
+            NetWait();
+            transform.position += transform.up * Time.deltaTime * speed;
+        }
     }
     public void HookTriggered(bool shouldLowerHook)
     {
@@ -64,6 +77,10 @@ public class FishNetTest : MonoBehaviour
 
         FishCounter.fishCounter.FishGotHooked();
         HookTriggered(false);
+    }
+    IEnumerator NetWait()
+    {
+        yield return new WaitForSeconds(5);
     }
 
     void SetFishValues(GameObject fish)
