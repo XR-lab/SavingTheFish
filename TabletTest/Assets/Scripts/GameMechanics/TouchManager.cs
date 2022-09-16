@@ -69,6 +69,9 @@ public class TouchManager : MonoBehaviour
         if (CheckIfSwipeThresholdReached() && currentInteractable.GetComponent<FishHook>())
         {
             currentInteractable.GetComponent<FishHook>().HookTriggered(false);
+
+            SaveTheFishData data = FindObjectOfType<SaveTheFishData>();
+            if (data != null) data.FishSaved += 1;
         }
 
         Slice();
@@ -105,6 +108,9 @@ public class TouchManager : MonoBehaviour
                 Destroy(hits[i].gameObject);
             }
         }
+        
+        SaveTheFishData data = FindObjectOfType<SaveTheFishData>();
+        if (data != null) data.FishSaved += 1;
     }
 
     public void AddHullComponents(GameObject go)

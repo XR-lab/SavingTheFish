@@ -1,10 +1,12 @@
+using System;
 using Photon.Pun;
 using UnityEngine;
 
 [RequireComponent(typeof(PhotonView))]
 public class NetworkClientBaseData : MonoBehaviourPunCallbacks
 {
-    public bool IsPlaying;
+    private bool isPlaying;
+    public Action OnIsPlayingChange;
 
     protected PhotonView view;
 
@@ -18,5 +20,18 @@ public class NetworkClientBaseData : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         view.RequestOwnership();
+    }
+
+    public virtual bool IsPlaying
+    {
+        get => isPlaying;
+        set
+        {
+            if (value != isPlaying)
+            {
+                OnIsPlayingChange?.Invoke();
+            }
+            isPlaying = value;
+        }
     }
 }
