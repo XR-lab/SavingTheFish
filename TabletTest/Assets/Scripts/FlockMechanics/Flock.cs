@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Flock : MonoBehaviour
 {
     [Header("Spawn Setup")]
-    [SerializeField] private FlockUnit flockUnitPrefab;
+    public FlockUnit[] flockUnitPrefab;
+    protected int m_RandomIndex;
     [SerializeField] public int flockSize;
     [SerializeField] private Vector3 spawnBounds;
 
@@ -69,6 +69,7 @@ public class Flock : MonoBehaviour
     private void Start()
     {
         GenerateUnits();
+        int m_RandomIndex = Random.Range(0, flockUnitPrefab.Length);
     }
 
     private void Update()
@@ -81,6 +82,7 @@ public class Flock : MonoBehaviour
 
     private void GenerateUnits()
     {
+
         allUnits = new FlockUnit[flockSize];
         for (int i = 0; i < flockSize; i++)
         {
@@ -89,7 +91,7 @@ public class Flock : MonoBehaviour
             var spawnPosition = transform.position + randomVector;
             var rotation = Quaternion.Euler(0, UnityEngine.Random.Range(0, 360), 0);
 
-            allUnits[i] = Instantiate(flockUnitPrefab, spawnPosition, rotation);
+            allUnits[i] = Instantiate(flockUnitPrefab[m_RandomIndex], spawnPosition, rotation);
             allUnits[i].AssignFlock(this);
             allUnits[i].InitializeSpeed(UnityEngine.Random.Range(minSpeed, maxSpeed));
         }

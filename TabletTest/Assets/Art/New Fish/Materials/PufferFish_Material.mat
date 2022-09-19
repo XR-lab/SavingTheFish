@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-3025460495070321312
+--- !u!114 &-613627297450825400
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,13 +20,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Pufferfish_Mat 1
+  m_Name: PufferFish_Material
   m_Shader: {fileID: -6465566751694194690, guid: 68a4192e91a480a49bb9a236db01599d, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: 2000
   stringTagMap:
     RenderType: Opaque
@@ -36,11 +36,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 0db3b70c55969d64fa3c5bd43a0c84a6, type: 3}
+        m_Texture: {fileID: 2800000, guid: d4a8ea4e73a9ee1469bc0265ff5b5de8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: f8cbcbf596e0a6b429a8f336e3bd3e71, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -64,10 +64,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 5a5f6021ccf2c6d419856586a8791fcf, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
+        m_Texture: {fileID: 2800000, guid: f8cbcbf596e0a6b429a8f336e3bd3e71, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal_Texture:
         m_Texture: {fileID: 2800000, guid: f8cbcbf596e0a6b429a8f336e3bd3e71, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -84,7 +88,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
-        m_Texture: {fileID: 2800000, guid: baacb5b0e223c20449926293db744fd7, type: 3}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture:
+        m_Texture: {fileID: 2800000, guid: d4a8ea4e73a9ee1469bc0265ff5b5de8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2D:
@@ -131,40 +139,41 @@ Material:
     - _Distance: 1.29
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Float: 0
+    - _Float: -6.54
     - _Float_1: 0
     - _Float_2: 0
-    - _Float_3: 0
-    - _Frequency: 7.06
+    - _Float_3: 1.37
+    - _Frequency: 2
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Line_Count: 15
+    - _Line_Count: 0
     - _Metallic: 0
-    - _Normal_Strength: 2.95
+    - _Noise_Boost: 4.78
+    - _Noise_Strength: 8.38
+    - _Normal_Power: 0.84
+    - _Normal_Strength: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _Power: 1.44
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Range_Wiggle: -3.61
+    - _Range_Wiggle: 0
     - _ReceiveShadows: 1
+    - _Scroll_speed: 1
     - _Side_Wiggle: 0
     - _Side_Wiggle_2: 0
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
+    - _Smoothstep_Edge_1: -0.1
+    - _Smoothstep_Edge_2: 1.76
+    - _Smoothstep_Strength: 0.94
     - _SpecularHighlights: 1
-    - _Speed: 30.16
+    - _Speed: 28.66
     - _SrcBlend: 1
     - _Surface: 0
-    - _Total_Strength: 0.043
-    - _Twirl_Strength: 17.42
-    - _UseAoMap: 0
-    - _UseColorMap: 1
-    - _UseEmissiveMap: 0
-    - _UseMetallicMap: 1
-    - _UseNormalMap: 1
-    - _UseRoughnessMap: 1
+    - _Total_Strength: 0
+    - _Twirl_Strength: 0
     - _Wiggle: 1
     - _WorkflowMode: 1
     - _ZTest: 4
@@ -172,17 +181,16 @@ Material:
     - _ZWriteControl: 0
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Base_Color: {r: 1, g: 1, b: 1, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Line_Offset: {r: 0, g: 0, b: 0, a: 0}
     - _Line_Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _Twirl_Center: {r: 0.4, g: 0.5, b: 0, a: 0}
-    - _Twirl_Offset: {r: 0.5, g: 0.5, b: 0, a: 0}
-    - _UvOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _UvTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _Twirl_Center: {r: 0, g: 0, b: 0, a: 0}
+    - _Twirl_Offset: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &8484419843718648875
+--- !u!114 &1281974877478415300
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

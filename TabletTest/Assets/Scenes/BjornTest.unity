@@ -478,6 +478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 266090400}
   - component: {fileID: 266090399}
+  - component: {fileID: 266090401}
   m_Layer: 0
   m_Name: Flock Spawner
   m_TagString: Untagged
@@ -528,6 +529,33 @@ Transform:
   m_Father: {fileID: 21663135}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &266090401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266090398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf38fcfb354a864ba063e1575d56d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flockUnitPrefab: {fileID: 0}
+  flockSize: 0
+  spawnBounds: {x: 0, y: 0, z: 0}
+  _minSpeed: 0
+  _maxSpeed: 0
+  _cohesionDistance: 0
+  _avoidanceDistance: 0
+  _aligementDistance: 0
+  _obstacleDistance: 0
+  _boundsDistance: 0
+  _cohesionWeight: 0
+  _avoidanceWeight: 0
+  _aligementWeight: 0
+  _boundsWeight: 0
+  _obstacleWeight: 0
 --- !u!1 &291381708
 GameObject:
   m_ObjectHideFlags: 0
