@@ -46,13 +46,13 @@ public class Timer : MonoBehaviour
     void DisplayEndScreen()
     {
         m_GameHasEnded = true;
-        FindObjectOfType<FishnetIndicator>().GameEnded();
+        //FindObjectOfType<FishnetIndicator>().GameEnded();
 
         infoPanel.SetActive(false);
         endScreen.SetActive(true);
 
         fishLeftText.text = FishCounter.fishCounter.GetCurrentFishCountAsString();
-        fishHooksStoppedText.text = FishHookCounter.fishHookCounter.GetFishHooksStoppedAsString();
+        //fishHooksStoppedText.text = FishHookCounter.fishHookCounter.GetFishHooksStoppedAsString();
 
         Time.timeScale = 0f;
     }

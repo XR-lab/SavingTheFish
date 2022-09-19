@@ -37,7 +37,7 @@ public class FishNetSpawner : MonoBehaviour
     private void InitiateEnemy()
     {
         var enemy = Instantiate(enemyToSpawn, GetRandomSpawnPoint(), Quaternion.identity);
-        enemy.transform.LookAt(myTransform);
+        //enemy.transform.LookAt(myTransform);
     }
 
     Vector3 GetRandomSpawnPoint()
@@ -46,7 +46,7 @@ public class FishNetSpawner : MonoBehaviour
         var randRad = randAngle * Mathf.PI / 180;
         var randDist = Random.Range(spawnRangeMin, spawnRangeMax);
 
-        return myTransform.position + new Vector3(Mathf.Sin(randRad), 0, Mathf.Cos(randRad)) * randDist;
+        return myTransform.position + new Vector3(Mathf.Sin(randRad), 0.75f, Mathf.Cos(randRad)) * randDist;
     }
 
     void OnDrawGizmosSelected()

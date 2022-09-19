@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Fish
   - FishHook
-  - Flock
+  - Waypoint
   layers:
   - Default
   - TransparentFX

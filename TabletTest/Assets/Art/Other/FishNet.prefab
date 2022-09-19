@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 3228537232478749782}
   - component: {fileID: 9081350460622346509}
   - component: {fileID: 5277874689956994277}
-  - component: {fileID: 2046134783276117021}
   - component: {fileID: -3353877402309280280}
+  - component: {fileID: 8977356089183514764}
   m_Layer: 6
   m_Name: FishNet
   m_TagString: FishHook
@@ -31,9 +31,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6668839262032945328}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.64, y: -18.76, z: -12.82}
-  m_LocalScale: {x: 100, y: 100, z: 100}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -7.813, y: -18.76, z: -12.82}
+  m_LocalScale: {x: 200, y: 200, z: 200}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -130,24 +130,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.022582702, y: 0.01702604, z: 0.019195236}
   m_Center: {x: 0, y: 0.000000010728836, z: -0.0015832543}
---- !u!114 &2046134783276117021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6668839262032945328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e5c1f6524a8e604b853782d95957a2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fishCollider: {fileID: 9081350460622346509}
-  touchCollider: {fileID: 5277874689956994277}
-  speed: 12.5
-  destroyCooldown: 3
-  fishHookWaitTime: 1
-  fishOffset: {x: 0.7, y: 0.3, z: 0.7}
 --- !u!120 &-3353877402309280280
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -190,8 +172,8 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: 26.33, z: 0}
-  - {x: 0, y: 0.0063160704, z: 0}
+  - {x: 0, y: 32, z: 0}
+  - {x: 0, y: 0.0062, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 5
@@ -247,3 +229,22 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
+--- !u!114 &8977356089183514764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6668839262032945328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a63f1439f7a3ba42a34f724d32bd0e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishCollider: {fileID: 9081350460622346509}
+  touchCollider: {fileID: 9081350460622346509}
+  m_FlockPositions: []
+  speed: 3.5
+  destroyCooldown: 3
+  fishHookWaitTime: 1
+  fishOffset: {x: 0.7, y: 0.3, z: 0.7}
