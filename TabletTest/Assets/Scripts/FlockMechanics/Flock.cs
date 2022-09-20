@@ -69,11 +69,12 @@ public class Flock : MonoBehaviour
     private void Start()
     {
         GenerateUnits();
-        int m_RandomIndex = Random.Range(0, flockUnitPrefab.Length);
     }
 
     private void Update()
     {
+        
+
         for (int i = 0; i < allUnits.Length; i++)
         {
             allUnits[i].MoveUnit();
@@ -83,9 +84,11 @@ public class Flock : MonoBehaviour
     private void GenerateUnits()
     {
 
+        //flockSize = flockSize * m_RandomIndex;
         allUnits = new FlockUnit[flockSize];
         for (int i = 0; i < flockSize; i++)
         {
+            m_RandomIndex = Random.Range(0, flockUnitPrefab.Length);
             var randomVector = UnityEngine.Random.insideUnitSphere;
             randomVector = new Vector3(randomVector.x * spawnBounds.x, randomVector.y * spawnBounds.y, randomVector.z * spawnBounds.z);
             var spawnPosition = transform.position + randomVector;
@@ -96,6 +99,11 @@ public class Flock : MonoBehaviour
             allUnits[i].InitializeSpeed(UnityEngine.Random.Range(minSpeed, maxSpeed));
         }
     }
+    void GetRandomWaypoint()
+    {
+        
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = new Color32(24, 218, 222, 32);
