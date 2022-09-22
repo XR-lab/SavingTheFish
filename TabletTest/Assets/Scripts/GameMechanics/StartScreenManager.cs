@@ -20,16 +20,16 @@ public class StartScreenManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-    public void OpenSettings()
-    {
-        m_Settings.SetActive(true);
-        m_StartScreen.SetActive(false);
-    }
-    public void CloseSettings()
-    {
-        m_Settings.SetActive(false);
-        m_StartScreen.SetActive(true);
-    }
+    //public void OpenSettings()
+    //{
+    //    m_Settings.SetActive(true);
+    //    m_StartScreen.SetActive(false);
+    //}
+    //public void CloseSettings()
+    //{
+    //    m_Settings.SetActive(false);
+    //    m_StartScreen.SetActive(true);
+    //}
     public void RulesOpen()
     {
         m_Rules.SetActive(true);

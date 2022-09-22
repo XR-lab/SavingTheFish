@@ -83,8 +83,6 @@ public class Flock : MonoBehaviour
 
     private void GenerateUnits()
     {
-
-        //flockSize = flockSize * m_RandomIndex;
         allUnits = new FlockUnit[flockSize];
         for (int i = 0; i < flockSize; i++)
         {

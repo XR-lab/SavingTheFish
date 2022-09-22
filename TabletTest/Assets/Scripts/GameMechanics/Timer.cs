@@ -52,7 +52,7 @@ public class Timer : MonoBehaviour
         endScreen.SetActive(true);
 
         fishLeftText.text = FishCounter.fishCounter.GetCurrentFishCountAsString();
-        //fishHooksStoppedText.text = FishHookCounter.fishHookCounter.GetFishHooksStoppedAsString();
+        fishHooksStoppedText.text = FishHookCounter.fishHookCounter.GetFishHooksStoppedAsString();
 
         Time.timeScale = 0f;
     }
