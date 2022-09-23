@@ -319,11 +319,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flockUnitPrefab:
-  - {fileID: 3779150534210881454, guid: adcc5800dd5dffa4ba6339b8b7208141, type: 3}
-  - {fileID: -7186289720325153429, guid: 9244a7624aaaa8340bd6fd4770fb38a7, type: 3}
-  - {fileID: 3911114529306004788, guid: 3227f26e60ab50e4c97ab23e1dcd0ab4, type: 3}
-  - {fileID: 3224259826475622317, guid: e19eead56d245be40991f875287bde84, type: 3}
-  - {fileID: 2816888998916612639, guid: beb5d0e2f4b63bc4bb311b0b850c8724, type: 3}
   - {fileID: 4836572381050308482, guid: 39fbe693897304842af10053ff8fa52e, type: 3}
   flockSize: 15
   spawnBounds: {x: 5, y: 5, z: 5}
@@ -466,7 +461,7 @@ MonoBehaviour:
   spawnDirection: 0
   spawnAngle: 360
   spawnRangeMin: 5
-  spawnRangeMax: 10
+  spawnRangeMax: 8
 --- !u!4 &196668322
 Transform:
   m_ObjectHideFlags: 0
@@ -660,12 +655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flockUnitPrefab:
-  - {fileID: 3779150534210881454, guid: adcc5800dd5dffa4ba6339b8b7208141, type: 3}
-  - {fileID: -7186289720325153429, guid: 9244a7624aaaa8340bd6fd4770fb38a7, type: 3}
-  - {fileID: 3911114529306004788, guid: 3227f26e60ab50e4c97ab23e1dcd0ab4, type: 3}
-  - {fileID: 3224259826475622317, guid: e19eead56d245be40991f875287bde84, type: 3}
   - {fileID: 2816888998916612639, guid: beb5d0e2f4b63bc4bb311b0b850c8724, type: 3}
-  - {fileID: 4836572381050308482, guid: 39fbe693897304842af10053ff8fa52e, type: 3}
   flockSize: 15
   spawnBounds: {x: 5, y: 5, z: 5}
   _minSpeed: 3.5
@@ -804,10 +794,6 @@ MonoBehaviour:
   flockUnitPrefab:
   - {fileID: 3779150534210881454, guid: adcc5800dd5dffa4ba6339b8b7208141, type: 3}
   - {fileID: -7186289720325153429, guid: 9244a7624aaaa8340bd6fd4770fb38a7, type: 3}
-  - {fileID: 3911114529306004788, guid: 3227f26e60ab50e4c97ab23e1dcd0ab4, type: 3}
-  - {fileID: 3224259826475622317, guid: e19eead56d245be40991f875287bde84, type: 3}
-  - {fileID: 2816888998916612639, guid: beb5d0e2f4b63bc4bb311b0b850c8724, type: 3}
-  - {fileID: 4836572381050308482, guid: 39fbe693897304842af10053ff8fa52e, type: 3}
   flockSize: 15
   spawnBounds: {x: 5, y: 5, z: 5}
   _minSpeed: 3.5
@@ -2266,12 +2252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flockUnitPrefab:
-  - {fileID: 3779150534210881454, guid: adcc5800dd5dffa4ba6339b8b7208141, type: 3}
-  - {fileID: -7186289720325153429, guid: 9244a7624aaaa8340bd6fd4770fb38a7, type: 3}
   - {fileID: 3911114529306004788, guid: 3227f26e60ab50e4c97ab23e1dcd0ab4, type: 3}
-  - {fileID: 3224259826475622317, guid: e19eead56d245be40991f875287bde84, type: 3}
-  - {fileID: 2816888998916612639, guid: beb5d0e2f4b63bc4bb311b0b850c8724, type: 3}
-  - {fileID: 4836572381050308482, guid: 39fbe693897304842af10053ff8fa52e, type: 3}
   flockSize: 15
   spawnBounds: {x: 5, y: 5, z: 5}
   _minSpeed: 3.5
@@ -2428,13 +2409,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flockUnitPrefab:
-  - {fileID: 3779150534210881454, guid: adcc5800dd5dffa4ba6339b8b7208141, type: 3}
-  - {fileID: -7186289720325153429, guid: 9244a7624aaaa8340bd6fd4770fb38a7, type: 3}
-  - {fileID: 3911114529306004788, guid: 3227f26e60ab50e4c97ab23e1dcd0ab4, type: 3}
   - {fileID: 3224259826475622317, guid: e19eead56d245be40991f875287bde84, type: 3}
-  - {fileID: 2816888998916612639, guid: beb5d0e2f4b63bc4bb311b0b850c8724, type: 3}
-  - {fileID: 4836572381050308482, guid: 39fbe693897304842af10053ff8fa52e, type: 3}
-  flockSize: 15
+  flockSize: 20
   spawnBounds: {x: 5, y: 5, z: 5}
   _minSpeed: 3.5
   _maxSpeed: 6.5
@@ -2908,11 +2884,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flockUnitPrefab:
-  - {fileID: 3779150534210881454, guid: adcc5800dd5dffa4ba6339b8b7208141, type: 3}
-  - {fileID: -7186289720325153429, guid: 9244a7624aaaa8340bd6fd4770fb38a7, type: 3}
-  - {fileID: 3911114529306004788, guid: 3227f26e60ab50e4c97ab23e1dcd0ab4, type: 3}
-  - {fileID: 3224259826475622317, guid: e19eead56d245be40991f875287bde84, type: 3}
-  - {fileID: 2816888998916612639, guid: beb5d0e2f4b63bc4bb311b0b850c8724, type: 3}
   - {fileID: 4836572381050308482, guid: 39fbe693897304842af10053ff8fa52e, type: 3}
   flockSize: 15
   spawnBounds: {x: 5, y: 5, z: 5}
@@ -3227,12 +3198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flockUnitPrefab:
-  - {fileID: 3779150534210881454, guid: adcc5800dd5dffa4ba6339b8b7208141, type: 3}
-  - {fileID: -7186289720325153429, guid: 9244a7624aaaa8340bd6fd4770fb38a7, type: 3}
   - {fileID: 3911114529306004788, guid: 3227f26e60ab50e4c97ab23e1dcd0ab4, type: 3}
-  - {fileID: 3224259826475622317, guid: e19eead56d245be40991f875287bde84, type: 3}
-  - {fileID: 2816888998916612639, guid: beb5d0e2f4b63bc4bb311b0b850c8724, type: 3}
-  - {fileID: 4836572381050308482, guid: 39fbe693897304842af10053ff8fa52e, type: 3}
   flockSize: 15
   spawnBounds: {x: 5, y: 5, z: 5}
   _minSpeed: 2.24
@@ -3607,12 +3573,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flockUnitPrefab:
-  - {fileID: 3779150534210881454, guid: adcc5800dd5dffa4ba6339b8b7208141, type: 3}
   - {fileID: -7186289720325153429, guid: 9244a7624aaaa8340bd6fd4770fb38a7, type: 3}
-  - {fileID: 3911114529306004788, guid: 3227f26e60ab50e4c97ab23e1dcd0ab4, type: 3}
-  - {fileID: 3224259826475622317, guid: e19eead56d245be40991f875287bde84, type: 3}
-  - {fileID: 2816888998916612639, guid: beb5d0e2f4b63bc4bb311b0b850c8724, type: 3}
-  - {fileID: 4836572381050308482, guid: 39fbe693897304842af10053ff8fa52e, type: 3}
+  - {fileID: 3779150534210881454, guid: adcc5800dd5dffa4ba6339b8b7208141, type: 3}
   flockSize: 15
   spawnBounds: {x: 5, y: 5, z: 5}
   _minSpeed: 2.24
