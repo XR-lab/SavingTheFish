@@ -13,6 +13,8 @@ public class TouchManager : MonoBehaviour
     [SerializeField] float shakeAmount = .1f;
 
     GameObject currentInteractable;
+    int currentFingerId = -1;
+
     Vector3 startSwipePos, currentSwipePos;
     float hookStartPosX;
 
@@ -21,37 +23,47 @@ public class TouchManager : MonoBehaviour
     Ray ray;
     RaycastHit hit;
 
+    
     private void Update()
     {
-        if (Input.touchCount == 0)
+        if (Input.touchCount <= 0)
             return;
 
-        CheckTouchBegan();
-        MoveHook();
-        CheckTouchEnded();
+        for (int i = 0; i < Input.touches.Length; i++)
+        {
+        
+            Touch touch = Input.touches[i];
+            CheckTouchBegan(touch);
+            MoveHook(touch);
+            CheckTouchEnded(touch);
+        }
     }
 
-    void CheckTouchBegan()
+    void CheckTouchBegan(Touch touch)
     {
-        if (Input.GetTouch(0).phase != TouchPhase.Began)
+        if (touch.phase != TouchPhase.Began)
             return;
 
-        startSwipePos = Input.GetTouch(0).position;
+        startSwipePos = touch.position;
 
-        ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+        ray = Camera.main.ScreenPointToRay(touch.position);
         if (Physics.Raycast(ray, out hit))
         {
             if (hit.collider.CompareTag("FishHook"))
             {
                 currentInteractable = hit.collider.gameObject;
                 hookStartPosX = currentInteractable.transform.position.x;
+                currentFingerId = touch.fingerId;
             }
         }
     }
 
-    void MoveHook()
+    void MoveHook(Touch touch)
     {
-        Touch touch = Input.GetTouch(0);
+        if (currentInteractable == null && touch.fingerId != currentFingerId)
+            return;
+
+//        Touch touch = Input.GetTouch(index);
         Vector3 currentPos = currentInteractable.transform.position;
 
         if (currentInteractable.GetComponent<FishHook>())
@@ -61,12 +73,14 @@ public class TouchManager : MonoBehaviour
         }
     }
 
-    void CheckTouchEnded()
+    void CheckTouchEnded(Touch touch)
     {
-        if (Input.GetTouch(0).phase != TouchPhase.Ended)
+        if (touch.phase != TouchPhase.Ended)
+            return;
+        if (currentInteractable == null && touch.fingerId != currentFingerId)
             return;
 
-        if (CheckIfSwipeThresholdReached() && currentInteractable.GetComponent<FishHook>())
+        if (CheckIfSwipeThresholdReached(touch) && currentInteractable.GetComponent<FishHook>())
         {
             currentInteractable.GetComponent<FishHook>().HookTriggered(false);
 
@@ -77,12 +91,14 @@ public class TouchManager : MonoBehaviour
         Slice();
 
         currentInteractable = null;
+        currentFingerId = -1;
     }
 
-    bool CheckIfSwipeThresholdReached()
+    bool CheckIfSwipeThresholdReached(Touch touch)
     {
-        currentSwipePos = Input.GetTouch(0).position;
+        currentSwipePos = touch.position;
         float distancePosY = currentSwipePos.y - startSwipePos.y;
+
 
         return distancePosY < -swipeRange || distancePosY > swipeRange;
     }
