@@ -23,6 +23,8 @@ public class Timer : MonoBehaviour
         m_TimerSlider.maxValue = m_TimeInMinutes * 60;
         m_TimerSlider.value = m_TimeInMinutes * 60;
         m_GameHasEnded = false;
+        infoPanel.SetActive(true);
+        endScreen.SetActive(false);
     }
 
     void Update()
