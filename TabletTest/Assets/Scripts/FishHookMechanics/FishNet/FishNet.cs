@@ -72,12 +72,12 @@ public class FishNet : MonoBehaviour
     {
         SetFishValues(fish);
 
-        if (transform.childCount == 1)
+        if (transform.childCount >= 0)
         {
             touchCollider.enabled = false;
         }
 
-        if(transform.childCount == 3)
+        if(transform.childCount >= 2)
         {
             fishCollider.enabled = false;
         }
