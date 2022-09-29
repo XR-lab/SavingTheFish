@@ -281,8 +281,8 @@ GameObject:
   - component: {fileID: 5155642501101076837}
   - component: {fileID: 3228537232478749782}
   - component: {fileID: 8977356089183514764}
-  - component: {fileID: 5648337537987023688}
   - component: {fileID: 2059761295790527530}
+  - component: {fileID: 1791492457806116801}
   m_Layer: 6
   m_Name: FishNet
   m_TagString: FishHook
@@ -385,14 +385,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a63f1439f7a3ba42a34f724d32bd0e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishCollider: {fileID: 5648337537987023688}
-  touchCollider: {fileID: 5648337537987023688}
+  fishCollider: {fileID: 2059761295790527530}
+  touchCollider: {fileID: 1791492457806116801}
   m_FlockPositions: []
   speed: 3.5
   destroyCooldown: 3
-  fishHookWaitTime: 1
+  fishNetWaitTime: 5
   fishOffset: {x: 0.7, y: 0.3, z: 0.7}
---- !u!65 &5648337537987023688
+--- !u!65 &2059761295790527530
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -403,9 +403,9 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 25, y: 20, z: 25}
-  m_Center: {x: 0, y: 0.75, z: 0}
---- !u!65 &2059761295790527530
+  m_Size: {x: 29.999998, y: 2.229807, z: 29.999998}
+  m_Center: {x: 0, y: 11.385, z: 0}
+--- !u!65 &1791492457806116801
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -416,5 +416,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 29.999998, y: 2.229807, z: 29.999998}
-  m_Center: {x: 0, y: 11.385, z: 0}
+  m_Size: {x: 25.000002, y: 20, z: 25.000002}
+  m_Center: {x: 0, y: 0, z: 0}

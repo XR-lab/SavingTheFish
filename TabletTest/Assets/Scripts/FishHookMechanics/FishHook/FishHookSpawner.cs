@@ -9,7 +9,7 @@ public class FishHookSpawner : MonoBehaviour
     bool _isSpawning;
 
     [Header("Components")]
-    [SerializeField] private GameObject enemyToSpawn;
+    [SerializeField] private FishHook[] fishHookToSpawn;
 
     [Header("Spawn Timer")]
     [SerializeField] private float initialDelay;
@@ -36,7 +36,7 @@ public class FishHookSpawner : MonoBehaviour
 
     private void InitiateEnemy()
     {
-        var enemy = Instantiate(enemyToSpawn, GetRandomSpawnPoint(), Quaternion.identity);
+        var enemy = Instantiate(fishHookToSpawn, GetRandomSpawnPoint(), Quaternion.identity);
         enemy.transform.LookAt(myTransform);
     }
 

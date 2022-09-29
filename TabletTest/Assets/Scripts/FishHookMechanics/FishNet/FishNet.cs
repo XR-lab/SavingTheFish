@@ -13,46 +13,52 @@ public class FishNet : MonoBehaviour
 
     [Space, SerializeField] float speed = 3f;
     [SerializeField] float destroyCooldown = 3f;
-    [SerializeField] float fishHookWaitTime = 1f;
+    [SerializeField] float fishNetWaitTime = 5f;
     [SerializeField] Vector3 fishOffset;
     bool inCooldown;
     bool goUp;
 
     private void Start()
     {
-        HookTriggered(true);
+        //HookTriggered(true);
         m_FlockPositions = Transform.FindObjectsOfType<FlockWayPoint>().Select(flock => flock.transform).ToArray();
         GetRandomWaypoint();
     }
 
     void Update()
     {
+        touchCollider.enabled = true;
+
         if (transform.position != m_Targetpoint && goUp == false)
         {
             transform.position = Vector3.MoveTowards(transform.position, m_Targetpoint, Time.deltaTime * speed);
-            GetComponent<Collider>().enabled = false;
+            fishCollider.enabled = false;
         }
         else 
         {
-            GetComponent<Collider>().enabled = true;
+
+            if (transform.childCount < 5)
+            {
+                fishCollider.enabled = true;
+            }
             goUp = true;
             StartCoroutine(NetWait());
         }
     }
-    public void HookTriggered(bool shouldLowerHook)
-    {
-        if (inCooldown || shouldLowerHook)
-            return;
+    //public void HookTriggered(bool shouldLowerHook)
+    //{
+    //    if (inCooldown || shouldLowerHook)
+    //        return;
 
-        inCooldown = true;
+    //    inCooldown = true;
 
-        if (transform.childCount == 3)
-        {
-            GetComponent<Collider>().enabled = false;
-        }
+    //    if (transform.childCount == 5)
+    //    {
+    //        GetComponent<Collider>().enabled = false;
+    //    }
 
-        Destroy(gameObject, destroyCooldown);
-    }
+    //    Destroy(gameObject, destroyCooldown);
+    //}
 
     private void OnTriggerEnter(Collider other)
     {
@@ -72,29 +78,24 @@ public class FishNet : MonoBehaviour
     {
         SetFishValues(fish);
 
-        if (transform.childCount >= 0)
-        {
-            touchCollider.enabled = false;
-        }
-
-        if(transform.childCount >= 2)
+        if (transform.childCount == 5)
         {
             fishCollider.enabled = false;
         }
 
-
-        yield return new WaitForSeconds(fishHookWaitTime);
+        //yield return new WaitForSeconds(fishNetWaitTime);
 
         FishCounter.fishCounter.FishGotHooked();
-        HookTriggered(false);
-
+        //HookTriggered(false);
+        yield return null;
     }
     IEnumerator NetWait()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(fishNetWaitTime);
         transform.position += transform.up * Time.deltaTime * speed;
-        yield return new WaitForSeconds(3);
-        HookTriggered(false);
+        yield return new WaitForSeconds(destroyCooldown);
+        //HookTriggered(false);
+        Destroy(gameObject, destroyCooldown);
         yield return null;
     }
 
