@@ -88,6 +88,8 @@ public class TouchManager : MonoBehaviour
             if (data != null) data.FishSaved += 1;
         }
 
+
+
         Slice();
 
         currentInteractable = null;

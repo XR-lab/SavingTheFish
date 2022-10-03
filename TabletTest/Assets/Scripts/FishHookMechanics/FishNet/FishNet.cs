@@ -85,7 +85,7 @@ public class FishNet : MonoBehaviour
 
         //yield return new WaitForSeconds(fishNetWaitTime);
 
-        FishCounter.fishCounter.FishGotHooked();
+        FishCounter.fishCounter.FishGotHooked(); 
         //HookTriggered(false);
         yield return null;
     }
