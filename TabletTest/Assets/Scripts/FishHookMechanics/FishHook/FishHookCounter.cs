@@ -22,6 +22,11 @@ public class FishHookCounter : MonoBehaviour
         fishHooksStopped++;
         fishHooksStoppedText.text = GetFishHooksStoppedAsString();
     }
+    public void FishNetGotStopped()
+    {
+        fishHooksStopped += 3;
+        fishHooksStoppedText.text = GetFishHooksStoppedAsString();
+    }
 
     public string GetFishHooksStoppedAsString()
     {

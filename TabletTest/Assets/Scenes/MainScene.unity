@@ -196,7 +196,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -0.00012207031, y: 0}
   m_SizeDelta: {x: -0.00012207, y: 0}
   m_Pivot: {x: 0.5000005, y: 0.49999988}
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 741c766cdbb473149b0b6d340109e67f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyToSpawn: {fileID: 6668839262032945328, guid: 6d1949a1bb77700429a9bc4f1a1f1c91, type: 3}
+  enemyToSpawn: {fileID: 8977356089183514764, guid: 6d1949a1bb77700429a9bc4f1a1f1c91, type: 3}
   initialDelay: 5
   spawnDelay: 20
   spawnDirection: 0
@@ -1029,7 +1029,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &404880271
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3189,7 +3189,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1615101508
 RectTransform:
   m_ObjectHideFlags: 0

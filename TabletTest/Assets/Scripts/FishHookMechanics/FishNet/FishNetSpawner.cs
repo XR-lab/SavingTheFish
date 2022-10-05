@@ -9,7 +9,7 @@ public class FishNetSpawner : MonoBehaviour
     bool _isSpawning;
 
     [Header("Components")]
-    [SerializeField] private GameObject enemyToSpawn;
+    [SerializeField] private FishNet enemyToSpawn;
 
     [Header("Spawn Timer")]
     [SerializeField] private float initialDelay;

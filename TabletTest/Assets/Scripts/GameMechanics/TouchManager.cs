@@ -114,7 +114,7 @@ public class TouchManager : MonoBehaviour
 
         for (int i = 0; i < hits.Length; i++)
         {
-            FishHookCounter.fishHookCounter.FishHookGotStopped();
+            FishHookCounter.fishHookCounter.FishNetGotStopped();
 
             SlicedHull hull = SliceObject(hits[i].gameObject, crossMaterial);
             if (hull != null)
@@ -128,7 +128,7 @@ public class TouchManager : MonoBehaviour
         }
         
         SaveTheFishData data = FindObjectOfType<SaveTheFishData>();
-        if (data != null) data.FishSaved += 1;
+        if (data != null) data.FishSaved += 3;
     }
 
     public void AddHullComponents(GameObject go)
